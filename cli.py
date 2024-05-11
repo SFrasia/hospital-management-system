@@ -8,6 +8,19 @@ class HospitalCLI:
         self.doctors = []
         self.appointments = []
 
+        # Populate lists from the database
+        self.populate_lists()
+
+    def populate_lists(self):
+        # Fetch patients from the database and add them to the patients list
+        self.patients = session.query(Patient).all()
+
+        # Fetch doctors from the database and add them to the doctors list
+        self.doctors = session.query(Doctor).all()
+
+        # Fetch appointments from the database and add them to the appointments list
+        self.appointments = session.query(Appointment).all()
+
     def display_menu(self):
         print("\nHospital Management System")
         print("1. Patients")
@@ -190,10 +203,27 @@ class HospitalCLI:
         except ValueError:
             print("Invalid date format. Please use YYYY-MM-DD.")
             return
+
+        # Get patient and doctor IDs from the user
         patient_id = int(input("Enter the patient ID: "))
         doctor_id = int(input("Enter the doctor ID: "))
-        appointment = Appointment(appointment_date=appointment_date, patient_id=patient_id, doctor_id=doctor_id)
-#       self.appointments.append(appointment)
+
+        # Fetch patient and doctor objects from the database
+        patient = session.query(Patient).get(patient_id)
+        doctor = session.query(Doctor).get(doctor_id)
+
+        if not patient:
+            print("Patient not found.")
+            return
+        if not doctor:
+            print("Doctor not found.")
+            return
+
+        # Create the appointment and assign patient and doctor using relationships
+        appointment = Appointment(appointment_date=appointment_date)
+        appointment.patient = patient
+        appointment.doctor = doctor
+
         session.add(appointment)
         session.commit()
         print("Appointment scheduled successfully.")

@@ -7,7 +7,7 @@ custom_metadata = MetaData()
 Base = declarative_base(metadata=custom_metadata)
 
 if __name__ == '__main__':
-    engine = create_engine('sqlite:///hospital.db')
+    engine = create_engine('sqlite:///hospital.db', echo=True)
     Session = sessionmaker(bind = engine)
     session = Session()
 
@@ -43,7 +43,6 @@ class Doctor(Base):
         self.specialization = specialization
         self.appointments = []
         
-
 class Appointment(Base):
     __tablename__ = 'appointments'
 
