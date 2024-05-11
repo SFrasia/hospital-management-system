@@ -4,10 +4,10 @@ The Hospital Management System is a Python-based application designed to streaml
 
 # Features
 
-Patient Management: Allows for creating, deleting, displaying, and finding patients by various attributes such as name, age, or gender.
-Doctor Management: Similar functionalities for managing doctors, including assigning them to patients.
-Appointment Management: Facilitates scheduling and canceling appointments between patients and doctors.
-ORM Integration: Utilizes SQLAlchemy ORM for database operations, ensuring efficient data storage and retrieval.
+* Patient Management: Allows for creating, deleting, displaying, and finding patients by various attributes such as name, age, or gender.
+* Doctor Management: Similar functionalities for managing doctors, including assigning them to patients.
+* Appointment Management: Facilitates scheduling and canceling appointments between patients and doctors.
+* ORM Integration: Utilizes SQLAlchemy ORM for database operations, ensuring efficient data storage and retrieval.
 
 # Installation
 
@@ -29,10 +29,10 @@ Run the application:
 
 Upon running the application, you will be presented with a menu-driven command-line interface (CLI) offering various options for managing the hospital:
 
-Patients: Manage patient-related tasks.
-Doctors: Manage doctor-related tasks.
-Appointments: Manage appointment scheduling and viewing.
-Simply follow the prompts to navigate through the different functionalities and interact with the system.
+* Patients: Manage patient-related tasks.
+* Doctors: Manage doctor-related tasks.
+* Appointments: Manage appointment scheduling and viewing.
+* Simply follow the prompts to navigate through the different functionalities and interact with the system.
 
 # Contributing
 
