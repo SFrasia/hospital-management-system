@@ -11,17 +11,17 @@ The Hospital Management System is a Python-based application designed to streaml
 
 # Installation
 
-Clone the repository to your local machine:
+1. Clone the repository to your local machine:
 
 ```git clone https://github.com/your-username/hospital-management-system.git```
 
-Install dependencies using Pipenv:
+2. Install dependencies using Pipenv:
 
 ```cd hospital-management-system```
 
 ```pipenv install```
 
-Run the application:
+3. Run the application:
 
 ```pipenv run python main.py```
 
@@ -32,7 +32,8 @@ Upon running the application, you will be presented with a menu-driven command-l
 * Patients: Manage patient-related tasks.
 * Doctors: Manage doctor-related tasks.
 * Appointments: Manage appointment scheduling and viewing.
-* Simply follow the prompts to navigate through the different functionalities and interact with the system.
+
+Simply follow the prompts to navigate through the different functionalities and interact with the system.
 
 # Contributing
 
