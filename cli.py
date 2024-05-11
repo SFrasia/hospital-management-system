@@ -62,10 +62,8 @@ class HospitalCLI:
         age = input("Enter patient age: ")
         gender = input("Enter patient gender: ")
         mobile_number = input("Enter patient mobile number: ")
-        # Create and add the patient to the session
         patient = Patient(name=name, age=age, gender=gender, mobile_number=mobile_number)
-        self.patients.append(patient)  # You may not need this line if you are using SQLAlchemy session
-        # Commit the changes to the database
+#       self.patients.append(patient)  
         session.add(patient)
         session.commit()
         print("Patient created successfully.")
@@ -75,7 +73,6 @@ class HospitalCLI:
         for patient in self.patients:
             if patient.name == patient_name:
                 self.patients.remove(patient)
-                # Delete the patient from the database
                 session.delete(patient)
                 session.commit()
                 print("Patient deleted successfully.")
@@ -134,8 +131,7 @@ class HospitalCLI:
         specialization = input("Enter doctor specialization: ")
         # Create and add the doctor to the session
         doctor = Doctor(name=name, specialization=specialization)
-        self.doctors.append(doctor)  # You may not need this line if you are using SQLAlchemy session
-        # Commit the changes to the database
+#       self.doctors.append(doctor)
         session.add(doctor)
         session.commit()
         print("Doctor created successfully.")
@@ -145,7 +141,6 @@ class HospitalCLI:
         for doctor in self.doctors:
             if doctor.name == doctor_name:
                 self.doctors.remove(doctor)
-                # Delete the doctor from the database
                 session.delete(doctor)
                 session.commit()
                 print("Doctor deleted successfully.")
@@ -197,10 +192,8 @@ class HospitalCLI:
             return
         patient_id = int(input("Enter the patient ID: "))
         doctor_id = int(input("Enter the doctor ID: "))
-        # Create and add the appointment to the session
         appointment = Appointment(appointment_date=appointment_date, patient_id=patient_id, doctor_id=doctor_id)
-        self.appointments.append(appointment)  # You may not need this line if you are using SQLAlchemy session
-        # Commit the changes to the database
+#       self.appointments.append(appointment)
         session.add(appointment)
         session.commit()
         print("Appointment scheduled successfully.")
