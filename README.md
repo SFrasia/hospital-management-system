@@ -23,7 +23,7 @@ The Hospital Management System is a Python-based application designed to streaml
 
 3. Run the application:
 
-  ```pipenv run python main.py```
+  ```pipenv run python models.py```
 
 # Usage
 
