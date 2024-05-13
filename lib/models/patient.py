@@ -1,6 +1,6 @@
 # lib/patient.py
 from __init__ import CONN, CURSOR
-from models.doctor import Doctor
+from doctor import Doctor
 
 class Patient:
 
@@ -83,6 +83,15 @@ class Patient:
             appointments TEXT,
             FOREIGN KEY (doctor_id) REFERENCES doctors(id)
             )
+        """
+        CURSOR.execute(sql)
+        CONN.commit()
+
+    @classmethod
+    def drop_table(cls):
+        """ Drop the table that persists Patients instances """
+        sql = """
+            DROP TABLE IF EXISTS patients;
         """
         CURSOR.execute(sql)
         CONN.commit()

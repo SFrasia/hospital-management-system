@@ -54,6 +54,15 @@ class Doctor:
         CURSOR.execute(sql)
         CONN.commit()
 
+    @classmethod
+    def drop_table(cls):
+        """ Drop the table that persists Doctor instances """
+        sql = """
+            DROP TABLE IF EXISTS doctors;
+        """
+        CURSOR.execute(sql)
+        CONN.commit()
+
     def save(self):
         """ Insert a new row with the name, specialization values of the current Doctor instance.
         Update object id attribute using the primary key value of new row.

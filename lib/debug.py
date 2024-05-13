@@ -13,7 +13,7 @@ def reset_database():
     Patient.create_table()
 
     # Create seed data
-    doctor1 = Doctor.create("Dr. Mark", "Physician")
+    doctor1 = Doctor.create("Dr. Linda", "Gynaecologist")
     doctor2 = Doctor.create(
         "Dr. Mark", "Physician")
     Patient.create("Jane Doe", 53, "Female", doctor1.id)
