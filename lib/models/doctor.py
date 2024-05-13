@@ -1,5 +1,5 @@
 # lib/doctor.py
-from __init__ import CURSOR, CONN
+from models.__init__ import CURSOR, CONN
 
 class Doctor:
 
@@ -41,13 +41,12 @@ class Doctor:
         
     @classmethod
     def create_table(cls):
-        """Create a new table to persist the attributes of Doctor instances"""
+        """ Create a new table to persist the attributes of Doctor instances """
         sql = """
             CREATE TABLE IF NOT EXISTS doctors (
             id INTEGER PRIMARY KEY,
             name TEXT,
-            specialization TEXT,
-            )
+            specialization TEXT)
         """
         CURSOR.execute(sql)
         CONN.commit()
@@ -66,11 +65,11 @@ class Doctor:
         Update object id attribute using the primary key value of new row.
         """
         sql = """
-            INSERT INTO doctors (name, specialization, patient_id)
-            VALUES (?, ?, ?)
+            INSERT INTO doctors (name, specialization)
+            VALUES (?, ?)
         """
 
-        CURSOR.execute(sql, (self.name, self.specialization, self.id))
+        CURSOR.execute(sql, (self.name, self.specialization))
         CONN.commit()
 
         self.id = CURSOR.lastrowid

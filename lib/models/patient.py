@@ -1,6 +1,6 @@
 # lib/patient.py
-from __init__ import CONN, CURSOR
-from doctor import Doctor
+from models.__init__ import CONN, CURSOR
+from models.doctor import Doctor
 
 class Patient:
 
@@ -14,10 +14,14 @@ class Patient:
         self.doctor_id = doctor_id
         self.appointments = []
 
+#    def __repr__(self):
+#        return "<Patient {}: {}, {}, {}>".format(self.id, self.name, self.age, self.gender)  
+#            #"<Doctor's ID: {self.doctor_id}>"
+        
     def __repr__(self):
         return (
-            f"<Patient {self.id}: {self.name}, {self.age}, {self.gender}" +
-            f"Doctor's ID: {self.doctor_id}>"
+            f"<Patient {self.id}: {self.name}, {self.age}, {self.gender}," +
+            f"Doctor ID: {self.doctor_id}>"
         )
     
     @property
@@ -80,7 +84,7 @@ class Patient:
             name TEXT,
             age INTEGER,
             gender TEXT,
-            appointments TEXT,
+            doctor_id INTEGER,
             FOREIGN KEY (doctor_id) REFERENCES doctors(id)
             )
         """
