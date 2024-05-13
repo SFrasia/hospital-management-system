@@ -23,7 +23,7 @@ class Doctor:
             self._name = name
         else:
             raise ValueError(
-                "Name must be a non-empty string"
+                "Name must be a string"
             )
 
     @property
