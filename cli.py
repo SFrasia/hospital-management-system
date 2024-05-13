@@ -1,4 +1,4 @@
-from lib.models import *  # Import SQLAlchemy models
+from lib.patient import *  # Import SQLAlchemy models
 from datetime import datetime
 from seed import session
 
