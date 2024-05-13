@@ -129,16 +129,16 @@ class Doctor:
         row = CURSOR.execute(sql, (id,)).fetchone()
         return cls(*row) if row else None
     
-    def patient(self):
+    def patients(self):
         """Return list of patients associated with current doctor"""
-        from lib.models.patient import patient
+        from lib.models.patient import Patient
         sql = """
-            SELECT * FROM patient
-            WHERE department_id = ?
+            SELECT * FROM patients
+            WHERE doctor_id = ?
         """
-        CURSOR.execute(sql, (self.id,),)
+        CURSOR.execute(sql, (self.id,))
 
         rows = CURSOR.fetchall()
         return [
-            patient.instance_from_db(row) for row in rows
+        Patient(*row) for row in rows
         ]

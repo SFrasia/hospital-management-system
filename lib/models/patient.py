@@ -12,7 +12,6 @@ class Patient:
         self.age = age
         self.gender = gender
         self.doctor_id = doctor_id
-        self.appointments = []
 
 #    def __repr__(self):
 #        return "<Patient {}: {}, {}, {}>".format(self.id, self.name, self.age, self.gender)  
@@ -105,32 +104,32 @@ class Patient:
         Update object id attribute using the primary key value of new row.
         """
         sql = """
-            INSERT INTO patients (name, age, gender, appointments, doctor_id)
-            VALUES (?, ?, ?, ?, ?)
+            INSERT INTO patients (name, age, gender, doctor_id)
+            VALUES (?, ?, ?, ?)
         """
 
-        CURSOR.execute(sql, (self.name, self.age, self.gender, str(self.appointments), self.doctor_id))
+        CURSOR.execute(sql, (self.name, self.age, self.gender, self.doctor_id))
         CONN.commit()
 
         self.id = CURSOR.lastrowid
         type(self).all[self.id] = self
 
     @classmethod
-    def create(cls, name, age, gender, appointments, doctor_id):
+    def create(cls, name, age, gender, doctor_id):
         """ Initialize a new Patient instance and save the object to the database """
         patient = cls(name, age, gender, doctor_id)
-        patient.appointments = appointments
         patient.save()
         return patient
+
 
     def update(self):
         """Update the table row corresponding to the current Patient instance."""
         sql = """
             UPDATE patients
-            SET name = ?, age = ?, gender = ?, appointments = ? doctor_id = ?
+            SET name = ?, age = ?, gender = ? doctor_id = ?
             WHERE id = ?
         """
-        CURSOR.execute(sql, (self.name, self.age, self.gender, str(self.appointments), self.doctor_id, self.id))
+        CURSOR.execute(sql, (self.name, self.age, self.gender, self.doctor_id, self.id))
         CONN.commit()
 
     def delete(self):
