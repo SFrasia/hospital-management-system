@@ -2,7 +2,7 @@
 #lib/testing/debug.py
 
 from __init__ import CONN, CURSOR
-from patient import Patient
+from lib.models.patient import Patient
 
 import ipdb
 

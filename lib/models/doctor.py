@@ -126,7 +126,7 @@ class Doctor:
     
     def patient(self):
         """Return list of patients associated with current doctor"""
-        from patient import patient
+        from lib.models.patient import patient
         sql = """
             SELECT * FROM patient
             WHERE department_id = ?
