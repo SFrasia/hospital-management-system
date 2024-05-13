@@ -6,7 +6,7 @@ def exit_program():
     exit()
 
 #Doctor
-def list_doctor():
+def list_doctors():
     doctors = Doctor.get_all()
     for doctor in doctors:
         print(doctor)
@@ -17,7 +17,7 @@ def find_doctor_by_name():
     print(doctor) if doctor else print(
         f'Doctor {name} not found')
     
-def find_department_by_id():
+def find_doctor_by_id():
     id_ = input("Enter the doctor's id: ")
     doctor = Doctor.find_by_id(id_)
     print(doctor) if doctor else print(f'Doctor {id_} not found')
@@ -56,7 +56,7 @@ def delete_doctor():
         print(f'Doctor {id_} not found')
 
 #Patient
-def list_patient():
+def list_patients():
     patients = Patient.get_all()
     for patient in patients:
         print(patient)
@@ -67,12 +67,13 @@ def find_patient_by_name():
     print(patient) if patient else print(
         f'Patient {name} not found')
     
-def find_patient_by_id():
+def find_patient_by_id(self):
     id_ = input("Enter the patient's id: ")
     patient = Patient.find_by_id(id_)
     print(patient) if patient else print(f'Patient {id_} not found')
 
-def create_patient(self):
+#
+def create_patient():
         name = input("Enter patient name: ")
         age = int(input("Enter patient age: "))
         gender = input("Enter patient gender: ")

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-from models.__init__ import CONN, CURSOR
-from models.doctor import Doctor
-from models.patient import Patient
+from __init__ import CONN, CURSOR
+from lib.models.doctor import Doctor
+from lib.models.patient import Patient
 import ipdb
 
 

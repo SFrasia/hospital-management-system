@@ -11,9 +11,7 @@ class Doctor:
         self.specialization = specialization
 
     def __repr__(self):
-        return (
-            f"<Doctor {self.id}: {self.name}, {self.specialization}>"
-        )
+        return "<Doctor {}: {}, {}>".format(self.id, self.name, self.specialization)
     
     @property
     def name(self):

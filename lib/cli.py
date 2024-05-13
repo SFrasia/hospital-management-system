@@ -1,4 +1,3 @@
-
 from helpers import (
     exit_program,
     list_doctors,
@@ -13,7 +12,6 @@ from helpers import (
     create_patient,
     update_patient,
     delete_patient,
-    list_doctor_patients
 )
 
 
@@ -47,8 +45,6 @@ def main():
             update_patient()
         elif choice == "12":
             delete_patient()
-        elif choice == "13":
-            list_doctor_patients()
         else:
             print("Invalid choice")
 
@@ -68,7 +64,6 @@ def menu():
     print("10: Create patient")
     print("11: Update patient")
     print("12: Delete patient")
-    print("13: List all patients with a doctor")
 
 
 if __name__ == "__main__":

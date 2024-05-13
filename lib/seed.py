@@ -1,6 +1,6 @@
-from lib.models.__init__ import CONN, CURSOR
-from lib.models.doctor import Doctor
-from lib.models.patient import Patient
+from models.__init__ import CONN, CURSOR
+from models.doctor import Doctor
+from models.patient import Patient
 
 def seed_database():
     try:
