@@ -11,12 +11,12 @@ def seed_database():
     Patient.create_table()
 
     # Create seed data
-    doctor1 = Doctor.create("Dr. Mark", "Physician")
+    doctor1 = Doctor.create("Dr. Linda", "Gynaecologist")
     doctor2 = Doctor.create(
         "Dr. Mark", "Physician")
     Patient.create("Jane Doe", 53, "Female", doctor1.id)
     Patient.create("John Doe", 35, "Male", doctor1.id)
-    Patient.create("Mark", 12, "Male", doctor1.id)
+    Patient.create("Mark", 12, "Male", doctor2.id)
     Patient.create("Hannah", 34, "Female", doctor2.id)
 
 

@@ -1,5 +1,4 @@
 # lib/doctor.py
-
 from __init__ import CURSOR, CONN
 
 class Doctor:

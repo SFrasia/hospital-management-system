@@ -1,6 +1,6 @@
 # lib/patient.py
 from __init__ import CONN, CURSOR
-from lib.models.doctor import Doctor
+from models.doctor import Doctor
 
 class Patient:
 
